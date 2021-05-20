@@ -1,0 +1,10 @@
+.charts {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.chart {
+  width: 330px;
+  max-height: 400px;
+  margin: 1rem auto;
+}

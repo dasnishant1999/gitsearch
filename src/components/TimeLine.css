@@ -1,0 +1,41 @@
+.timeline-item {
+  margin: 1rem;
+}
+
+.timeline-item strong {
+  background-color: red;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+}
+
+.timeline-item-details {
+  margin: 1.3rem 0 2rem 0;
+  padding: 1rem;
+  background-color: yellow;
+}
+
+.timeline-item-details h3{
+  margin: 0 0 0.5rem 0;
+}
+
+.repo-name{
+    display: flex;
+    align-items: center;
+}
+
+.timeline-item-stats{
+  margin: 1rem 0 0 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.stats-row{
+    display: flex;
+    align-items: center;
+}
+
+.stats{
+    display: flex;
+    align-items: center;
+    margin: 0 0.5rem;
+}

@@ -1,0 +1,46 @@
+.user-info {
+  margin: 1rem 1rem;
+  padding: 1.5rem;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.user-info img {
+  width: 200px;
+  height: 200px;
+  border-radius: 200px;
+}
+
+.user-info h2,
+a,
+p {
+  margin: 0;
+  word-break: break-all;
+}
+
+.user-info h2 {
+  margin: 0.5rem;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.username-link {
+  background-color: yellow;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.user-info-inline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem;
+}
+
+.MuiSvgIcon-root {
+  margin-right: 3px;
+}

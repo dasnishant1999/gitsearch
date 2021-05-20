@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: blue;
+  padding: 0 0.5rem;
+}
+
+.header form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-input {
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.search-btn {
+  margin-left: 0.3rem;
+}
