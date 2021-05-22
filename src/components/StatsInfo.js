@@ -1,37 +1,39 @@
-import React from "react";
-import GithubUser from "../mockdata/mockUser";
+import React, { useContext } from "react";
 import { GoRepo, GoGist } from "react-icons/go";
 import { FiUsers, FiUserPlus } from "react-icons/fi";
 import "./StatsInfo.css";
+import { GithubContext } from "../context/GithubContextProvider";
 
 function StatsInfo() {
+  const { githubUser } = useContext(GithubContext);
+
   const items = [
     {
       id: 1,
       label: "Repos",
       Icon: GoRepo,
-      value: GithubUser.public_repos,
+      value: githubUser.public_repos,
       color: "pink",
     },
     {
       id: 2,
       label: "Gists",
       Icon: GoGist,
-      value: GithubUser.public_gists,
+      value: githubUser.public_gists,
       color: "green",
     },
     {
       id: 3,
       label: "Followers",
       Icon: FiUsers,
-      value: GithubUser.followers,
+      value: githubUser.followers,
       color: "purple",
     },
     {
       id: 4,
       label: "Following",
       Icon: FiUserPlus,
-      value: GithubUser.following,
+      value: githubUser.following,
       color: "yellow",
     },
   ];

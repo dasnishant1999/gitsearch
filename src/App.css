@@ -1,0 +1,16 @@
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem;
+  padding: 1.5rem;
+  background-color: white;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.loader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem auto;
+}

@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import Column2d from "./Column2d";
-import Repos from "../mockdata/mockRepos";
 import "./Charts.css";
 import Pie2d from "./Pie2d";
+import { GithubContext } from "../context/GithubContextProvider";
 
 function Charts() {
-  const repoData = Repos.sort((a, b) => b.size - a.size).slice(0, 5);
+  const { repos } = useContext(GithubContext);
+
+  const repoData = repos.sort((a, b) => b.size - a.size).slice(0, 5);
 
   const sizeData = repoData.map((repo) => {
     return {
@@ -14,7 +16,7 @@ function Charts() {
     };
   });
 
-  const languages = Repos.reduce((total, item) => {
+  const languages = repos.reduce((total, item) => {
     const { language } = item;
     if (!language) {
       return total;
@@ -35,8 +37,6 @@ function Charts() {
       return b.value - a.value;
     })
     .slice(0, 7);
-
-  console.log(mostUsed);
 
   return (
     <div className="charts">

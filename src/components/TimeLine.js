@@ -1,11 +1,13 @@
-import React from "react";
-import Repos from "../mockdata/mockRepos";
+import React, { useContext } from "react";
 import { GoRepo, GoStar, GoRepoForked } from "react-icons/go";
+import { GithubContext } from "../context/GithubContextProvider";
 
 import "./TimeLine.css";
 
 function TimeLine() {
-  const repos = Repos.sort((a, b) => {
+  const { repos } = useContext(GithubContext);
+
+  repos.sort((a, b) => {
     return new Date(b.created_at) - new Date(a.created_at);
   });
 

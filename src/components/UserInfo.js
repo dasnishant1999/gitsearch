@@ -1,39 +1,43 @@
-import React from "react";
-import GithubUser from "../mockdata/mockUser";
+import React, { useContext } from "react";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import LanguageIcon from "@material-ui/icons/Language";
 import CalendarTodayIcon from "@material-ui/icons/CalendarToday";
 import "./UserInfo.css";
+import { GithubContext } from "../context/GithubContextProvider";
 
 function UserInfo() {
-  var date = new Date(GithubUser.created_at);
-  date = date.toDateString().slice(4);
+  const { githubUser } = useContext(GithubContext);
 
+  var date = new Date(githubUser.created_at);
+  date = date.toDateString().slice(4);
   return (
     <div className="user-info">
-      <img src={GithubUser.avatar_url} alt="profile-pic" />
+      <img src={githubUser.avatar_url} alt="profile-pic" />
       <div className=" user-info-content">
-        <h2>{GithubUser.name}</h2>
-        <a href={GithubUser.html_url} className="username-link" target="_blank">
-          @{GithubUser.login}
+        <h2>{githubUser.name}</h2>
+        <a href={githubUser.html_url} className="username-link" target="_blank">
+          @{githubUser.login}
         </a>
-        <div className="user-info-inline">
-          <LocationOnIcon />
-          {GithubUser.name && <p>{GithubUser.location}</p>}
-        </div>
-        <div className="user-info-inline">
-          <LanguageIcon />
-          {GithubUser.blog && (
-            <a href={GithubUser.blog} target="_blank">
-              {GithubUser.blog}
+        {githubUser.location && (
+          <div className="user-info-inline">
+            <LocationOnIcon />
+            {githubUser.name && <p>{githubUser.location}</p>}
+          </div>
+        )}
+        {githubUser.blog && (
+          <div className="user-info-inline">
+            <LanguageIcon />
+
+            <a href={githubUser.blog} target="_blank">
+              {githubUser.blog}
             </a>
-          )}
-        </div>
+          </div>
+        )}
         <div className="user-info-inline">
           <CalendarTodayIcon />
           <p>Joined github on {date}</p>
         </div>
-        <p>Bio: {GithubUser.bio}</p>
+        {githubUser.bio && <p>Bio: {githubUser.bio}</p>}
       </div>
     </div>
   );
