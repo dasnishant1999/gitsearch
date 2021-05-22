@@ -5,6 +5,10 @@ import { GoRepo, GoStar, GoRepoForked } from "react-icons/go";
 import "./TimeLine.css";
 
 function TimeLine() {
+  const repos = Repos.sort((a, b) => {
+    return new Date(b.created_at) - new Date(a.created_at);
+  });
+
   const Item = ({ repo }) => {
     var date = new Date(repo.created_at);
     date = date.toDateString().slice(4);
@@ -39,7 +43,7 @@ function TimeLine() {
 
   return (
     <div className="timeline">
-      {Repos.map((repo) => (
+      {repos.map((repo) => (
         <Item key={repo.id} repo={repo} />
       ))}
     </div>

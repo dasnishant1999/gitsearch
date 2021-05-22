@@ -12,23 +12,29 @@ function UserInfo() {
   return (
     <div className="user-info">
       <img src={GithubUser.avatar_url} alt="profile-pic" />
-      <h2>{GithubUser.name}</h2>
-      <a href={GithubUser.html_url} className="username-link">
-        @{GithubUser.login}
-      </a>
-      <div className="user-info-inline">
-        <LocationOnIcon />
-        {GithubUser.name && <p>{GithubUser.location}</p>}
+      <div className=" user-info-content">
+        <h2>{GithubUser.name}</h2>
+        <a href={GithubUser.html_url} className="username-link" target="_blank">
+          @{GithubUser.login}
+        </a>
+        <div className="user-info-inline">
+          <LocationOnIcon />
+          {GithubUser.name && <p>{GithubUser.location}</p>}
+        </div>
+        <div className="user-info-inline">
+          <LanguageIcon />
+          {GithubUser.blog && (
+            <a href={GithubUser.blog} target="_blank">
+              {GithubUser.blog}
+            </a>
+          )}
+        </div>
+        <div className="user-info-inline">
+          <CalendarTodayIcon />
+          <p>Joined github on {date}</p>
+        </div>
+        <p>Bio: {GithubUser.bio}</p>
       </div>
-      <div className="user-info-inline">
-        <LanguageIcon />
-        {GithubUser.blog && <a href={GithubUser.blog}>{GithubUser.blog}</a>}
-      </div>
-      <div className="user-info-inline">
-        <CalendarTodayIcon />
-        <p>Joined github on {date}</p>
-      </div>
-      <p>Bio: {GithubUser.bio}</p>
     </div>
   );
 }

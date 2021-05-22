@@ -8,8 +8,10 @@
   margin: 1rem auto;
   border-radius: 5px;
   padding: 1rem;
-  background: #10b981;
+  background: #2b7cda;
+  color: white;
   display: flex;
+  box-shadow: 5px 5px 20px  rgba(0,0,0,0.2);
 }
 
 .item div {

@@ -3,7 +3,8 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  background-color: blue;
+  background-color: white;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   padding: 0 0.5rem;
 }
 
@@ -14,10 +15,28 @@
 }
 
 .search-input {
-  padding: 0.5rem;
+  background-color: rgb(227, 227, 235);
+  outline: none;
+  border: none;
+  padding: 0.7rem;
   border-radius: 5px;
+}
+
+@media screen and (min-width:600px) {
+  .search-input{
+    width: 250px;
+  }
+}
+
+.search-input::placeholder{
+  font-weight: 600;
 }
 
 .search-btn {
   margin-left: 0.3rem;
+  border-radius: 5px;
+  padding: 4px 8px;
+  background-color: blueviolet;
+  color: white;
+  border: none;
 }

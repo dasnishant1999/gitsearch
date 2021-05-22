@@ -3,7 +3,8 @@
 }
 
 .timeline-item strong {
-  background-color: red;
+  background-color: #a007a0;
+  color: white;
   border-radius: 20px;
   padding: 0.5rem 1rem;
 }
@@ -11,31 +12,32 @@
 .timeline-item-details {
   margin: 1.3rem 0 2rem 0;
   padding: 1rem;
-  background-color: yellow;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.timeline-item-details h3{
+.timeline-item-details h3 {
   margin: 0 0 0.5rem 0;
 }
 
-.repo-name{
-    display: flex;
-    align-items: center;
+.repo-name {
+  display: flex;
+  align-items: center;
 }
 
-.timeline-item-stats{
+.timeline-item-stats {
   margin: 1rem 0 0 0;
   display: flex;
   justify-content: space-between;
 }
 
-.stats-row{
-    display: flex;
-    align-items: center;
+.stats-row {
+  display: flex;
+  align-items: center;
 }
 
-.stats{
-    display: flex;
-    align-items: center;
-    margin: 0 0.5rem;
+.stats {
+  display: flex;
+  align-items: center;
+  margin: 0 0.5rem;
 }

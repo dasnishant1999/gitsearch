@@ -1,11 +1,31 @@
 .user-info {
-  margin: 1rem 1rem;
+  width: 65%;
+  margin: 1rem auto;
   padding: 1.5rem;
-  background-color: red;
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.user-info-content {
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  margin-left: 2rem;
+}
+
+@media screen and (max-width: 600px) {
+  .user-info {
+    width: 80%;
+    margin: 1rem auto;
+    flex-direction: column;
+  }
+  .user-info-content {
+    margin: 0;
+  }
 }
 
 .user-info img {
@@ -28,15 +48,16 @@ p {
 }
 
 .username-link {
-  background-color: yellow;
+  width: 130px;
+  background-color: #20d144;
   padding: 0.5rem 1rem;
   border-radius: 5px;
   text-decoration: none;
+  color: rgb(245, 242, 237);
 }
 
 .user-info-inline {
   display: flex;
-  justify-content: center;
   align-items: center;
   margin: 0.5rem;
 }
