@@ -21,7 +21,11 @@ const Dashboard = () => {
     <main>
       <Header></Header>
       {loading ? (
-        <img className="loader" src="./images/preloader.gif"></img>
+        <img
+          className="loader"
+          src="./images/preloader.gif"
+          alt="loading"
+        ></img>
       ) : error ? (
         <div className="error">{error}</div>
       ) : (
