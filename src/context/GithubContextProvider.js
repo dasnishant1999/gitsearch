@@ -1,6 +1,4 @@
 import React, { createContext, useEffect, useState } from "react";
-import mockUser from "../mockdata/mockUser";
-import mockRepos from "../mockdata/mockRepos";
 import axios from "axios";
 
 const rootUrl = "https://api.github.com";
@@ -8,8 +6,8 @@ const rootUrl = "https://api.github.com";
 export const GithubContext = createContext();
 
 function GithubContextProvider({ children }) {
-  const [githubUser, setgithubUser] = useState(mockUser);
-  const [repos, setrepos] = useState(mockRepos);
+  const [githubUser, setgithubUser] = useState();
+  const [repos, setrepos] = useState();
   const [loading, setloading] = useState(false);
   const [error, seterror] = useState("");
 
@@ -20,7 +18,6 @@ function GithubContextProvider({ children }) {
       const response = await axios
         .get(`${rootUrl}/users/torvalds`)
         .catch((error) => console.log(error));
-      console.log(response);
       if (response) {
         setgithubUser(response.data);
         const repos = await axios

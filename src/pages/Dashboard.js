@@ -11,7 +11,7 @@ import { GithubContext } from "../context/GithubContextProvider";
 const Dashboard = () => {
   const [value, setValue] = useState(0);
 
-  const { error, loading } = useContext(GithubContext);
+  const { error, loading, githubUser,repos } = useContext(GithubContext);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -29,26 +29,29 @@ const Dashboard = () => {
       ) : error ? (
         <div className="error">{error}</div>
       ) : (
-        <>
-          <UserInfo></UserInfo>
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            indicatorColor="primary"
-            textColor="primary"
-            centered
-          >
-            <Tab label="Stats" />
-            <Tab label="Timeline" />
-          </Tabs>
-          {value === 0 && (
-            <>
-              <StatsInfo></StatsInfo>
-              <Charts></Charts>
-            </>
-          )}
-          {value === 1 && <TimeLine></TimeLine>}
-        </>
+        githubUser &&
+        repos && (
+          <>
+            <UserInfo></UserInfo>
+            <Tabs
+              value={value}
+              onChange={handleChange}
+              indicatorColor="primary"
+              textColor="primary"
+              centered
+            >
+              <Tab label="Stats" />
+              <Tab label="Timeline" />
+            </Tabs>
+            {value === 0 && (
+              <>
+                <StatsInfo></StatsInfo>
+                <Charts></Charts>
+              </>
+            )}
+            {value === 1 && <TimeLine></TimeLine>}
+          </>
+        )
       )}
     </main>
   );

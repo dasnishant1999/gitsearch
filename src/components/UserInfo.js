@@ -15,7 +15,12 @@ function UserInfo() {
       <img src={githubUser.avatar_url} alt="profile-pic" />
       <div className=" user-info-content">
         <h2>{githubUser.name}</h2>
-        <a href={githubUser.html_url} className="username-link" target="_blank">
+        <a
+          href={githubUser.html_url}
+          className="username-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           @{githubUser.login}
         </a>
         {githubUser.location && (
@@ -27,8 +32,7 @@ function UserInfo() {
         {githubUser.blog && (
           <div className="user-info-inline">
             <LanguageIcon />
-
-            <a href={githubUser.blog} target="_blank">
+            <a href={githubUser.blog} target="_blank" rel="noopener noreferrer">
               {githubUser.blog}
             </a>
           </div>
